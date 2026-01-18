@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="description" content="SoundsThatShape Page">
+  <meta property="og:title" content="SoundsThatShape"/>
+  <meta property="og:description" content="SoundsThatShape Page"/>
+  <!-- <meta property="og:image" content="static/images/fig_abstract.png"/> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SoundsThatShape</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/app.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script> -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"></script>
+
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@^0.172.0/build/three.module.min.js"
+      }
+    }
+    </script>
+</head>
+<body>
+ 
+<!-- Top Navi -->
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/gh-BumsooKim">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">More Research about Bumsoo Kim</a>
+
+        <div class="navbar-dropdown", style="left:50%; margin-left:-350px; min-width:700px">
+          <!-- Domain A -->
+          <span class="navbar-item", style="font-weight:bold; background:rgb(156, 71, 46);">Non-photorealistic (NPR) Domain</span>
+            <div class="container is-max-desktop"><div class="columns is-centered">
+              <!-- More Research: Paper -->
+              <div class="column", style="min-width:300px;">
+                <a class="navbar-item" href="https://gh-bumsookim.github.io/Minecraft-ify/">&emsp;Minecraft-ify</a>
+                <a class="navbar-item" href="https://gh-bumsookim.github.io/ToonAging/">&emsp;ToonAging</a>
+                <a class="navbar-item" href="https://gh-bumsookim.github.io/Cartoon-Hallucinations-Detection/">&emsp;Cartoon Hallucination Detction</a></div>
+
+              <!-- More Research: Conf -->
+              <div class="column", style="min-width:200px;">
+                <span class="navbar-item" >NeurIPS:W'23, Oral</span>
+                <span class="navbar-item" >CVPR:W'24</span>
+                <span class="navbar-item" >WACV'25</span></div>
+            
+              <!-- More Research: Author Notation -->
+              <div class="column", style="min-width:150px;">
+                <span class="navbar-item" ><em>1st authored</em></span>
+                <span class="navbar-item" ><em>1st authored</em></span>
+                <span class="navbar-item" ><em>Co-1st authored</em></span></div></div></div>
+
+          <!-- Domain B -->
+          <span class="navbar-item", style="font-weight:bold; background:#1e5f97;">Photorealistic (PR) Domain</span>
+            <div class="container is-max-desktop"><div class="columns is-centered">
+              <!-- More Research: Paper -->
+              <div class="column", style="min-width:300px;">
+                <a class="navbar-item" href="https://video-reaging.github.io/">&emsp;Video Face Re-Aging</a>
+                <a class="navbar-item" href="https://arxiv.org/abs/2502.03966">&emsp;MultiFloodSynth</a>
+                <a class="navbar-item" href="https://gh-bumsookim.github.io/VideoTimeTravel/">&emsp;VideoTimeTravel</a>
+                <span class="navbar-item" style="font-weight:bold;">&emsp;SoundsThatShape (Here)</span></div>
+
+              <!-- More Research: Conf -->
+              <div class="column", style="min-width:200px;">
+                <span class="navbar-item" >preprinted</span>
+                <span class="navbar-item" >AAAI:W'25, Oral</span>
+                <span class="navbar-item" >Visual Computer'26</span>
+                <span class="navbar-item" >ICASSP'26</span></div>
+
+              <!-- More Research: Author Notation -->
+              <div class="column", style="min-width:150px;">
+                <span class="navbar-item" ><em>Co-authored</em></span>
+                <span class="navbar-item" ><em>Co-1st authored</em></span>
+                <span class="navbar-item" ><em>1st authored</em></span>
+                <span class="navbar-item" ><em>1st authored</em></span></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero is-black">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+               Sounds That Shape: Audio-Driven 3D Mesh Generation with Attribute-Decoupled Score Distillation Sampling
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=JlNb4R8AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Bumsoo Kim<sup>1</sup></a>,
+                <a href="https://scholar.google.com/citations?user=k1SL428AAAAJ" target="_blank">Sanghyun Seo<sup>1,*</sup></a></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>Chung-Ang University, Republic of Korea<br>
+                </span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Corresponding Author</small></span>
+            </div>
+            <span class="publication-venue">ICASSP 2026</span>
+            
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-white">
+                  <span class="icon"> <i class="fas fa-file-pdf"></i> </span>
+                  <span>Paper (Soon)</span></a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/gh-BumsooKim/SoundsThatShape", target="_blank" class="external-link button is-normal is-rounded is-white">
+                  <span class="icon"> <i class="fab fa-github"></i> </span>
+                  <span>Code (Soon)</span> </a>
+                </span>
+                
+              </div>
+              <br> More details coming soon!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Info -->
+<section class="hero teaser is-black">
+  <div class="container">
+    <div class="column is-centered has-text-centered"> 
+      <h1 class="title is-2 has-text-centered"><cite>"Imagine What Shape Sound Could Take"</cite></h1><br>
+      <h2 class="subtitle has-text-centered">
+        <b>tl;dr</b>: Introducing audio-driven 3D mesh and texture generation system with pretrained 2D diffusion models from a single audio input. </h2>
+        <div class="column has-text-centered">
+        <a href="https://neweng.cau.ac.kr/index.do"><img src="static/images/cau_logo.png" style="width: 20%"></a>
+        </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</section>
+
+<!-- Teaser Image --> 
+<!-- <section class="hero is-black">
+  <div class="container">
+    <div class="column is-centered has-text-centered">
+      <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Teaser Image</h2> </div> <br>
+      <div class="image-container" style="width: 70%;">
+        <img src="static/images/fig_teaser.png">
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</section>  -->
+
+<!-- Problem Statement -->
+<!-- <section class="hero is-black">
+  <div class="container">
+    <div class="column is-centered has-text-centered">
+      <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Problem Statement</h2> </div> <br>
+          <h2 class="subtitle has-text-centered">
+            How does sound affect the conditional generation pipeline?
+            Does it have the same amount of information as text/images?
+            The answer is no.
+            Let's take a look at the results of a audio modality-based generation task!</h2>
+      <div class="image-container" style="width: 50%;">
+        <img src="static/images/abstract.jfif">
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</section>  -->
+
+<!-- Background -->
+<!-- <section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Background</h2> </div> <br>
+        <div class="content has-text-justified" >
+            <h2 class="subtitle has-text-centered">1. Score Distillation Sampling</h2>
+        </div>
+    <div class="spacer"></div>
+      </div>
+    </div>
+</section>  -->
+
+<!-- Method -->
+<section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Method Overview</h2> </div> <br>
+        <div class="content has-text-justified" >
+        </div>
+        <div class="image-container">
+          <img src="static/images/fig_graph.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</section> 
+
+<!-- Results Exhibition: Audio-to-3D Generation -->
+<section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered" >
+      <div class="column">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">SFX-to-3D Generation Results</h2> </div> <br>
+          <!-- Row 1 Begin-->
+          <div class="columns">
+          <!-- R1 C1 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Fire Cracking) </p>
+            <audio id="audioPlay" controls="" style="width: 100%;" autoplay loop>
+              <source src="./static/audios/fire_x1.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="fire.glb">
+              <div class="controls glass" style="text-align: left;"> A23D Result: </div> <effect-composer>
+                  <bloom-effect threshold="0.76"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          <!-- R1 C3 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Forest) </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/forest_x4.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="forest.glb">
+              <div class="controls glass" style="text-align: left;"> A23D Result: </div> <effect-composer>
+                  <bloom-effect threshold="0.79"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          <!-- R1 C4 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Underwater Bubbling) </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/Underwater bubbling.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="underwater.glb">
+              <div class="controls glass" style="text-align: left;"> A23D Result: </div> <effect-composer>
+                  <bloom-effect threshold="0.735"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          <!-- R1 C5 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Snow) </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/snow_x8.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="snow.glb">
+              <div class="controls glass" style="text-align: left;"> A23D Result: </div> <effect-composer>
+                  <bloom-effect threshold="0.48"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+        </div>
+        <!-- Row 1 End-->
+        <h2 class="subtitle has-text-centered"> Our system enables audio-based 3D mesh and texture generation using pre-trained 2D diffusion models with a single audio file.</h2>
+      </div>
+    </div>
+    
+  </div>
+  <div class="spacer"></div>
+</section>
+
+
+
+<!-- Audio-Driven Text-to-3D -->
+<section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered" >
+      <div class="column">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Audio-Driven Text-to-3D Variation Results</h2> </div> <br>
+          <!-- Row 1 Begin-->
+        <div class="columns">
+          <!-- R1 C1 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Fire Crackling) <br>
+              <b>Text:</b> 💬 <i>"A vase"</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/fire_x1.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="vase.glb">
+              <div class="controls glass" style="text-align: left;"> Ours: </div> <effect-composer>
+                  <bloom-effect threshold="0.48"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          <!-- R1 C2 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Underwater) <br>
+              <b>Text:</b> <i>"A shoe"</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/Underwater bubbling.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="underwater_shoes_sds_a_t_shape.glb">
+              <div class="controls glass" style="text-align: left;"> Ours: </div> <effect-composer>
+                  <bloom-effect threshold="0.73"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          <!-- R1 C3 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Forest) <br>
+              <b>Text:</b> <i>"A cup"</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/forest_x4.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="forest_cup_sds_a_t_shape.glb">
+              <div class="controls glass" style="text-align: left;">  Ours: </div> <effect-composer>
+                  <bloom-effect threshold="0.48"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          <!-- R1 C4 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Splashing water) <br>
+              <b>Text:</b> <i>"A Chair"</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/Splashing water.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="splashing.glb">
+              <div class="controls glass" style="text-align: left;"> Ours: </div> </model-viewer>  
+          </div>
+        </div>
+        <!-- Row 1 End-->
+        <h2 class="subtitle has-text-centered">With auxiliary text prompts, it allows for more expressive and realistic 3D content through attribute-decoupled denoising guidance.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</section>
+
+<!-- Ablation Study -->
+<section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered" >
+      <div class="column">
+        <br>
+        <div class="section-title">
+          <h2 class="title is-3 is-centered" id="additional">Ablation Study: Modality-Cross 3D Generation</h2> </div> <br>
+          <!-- Row 1 Begin-->
+        <div class="columns">
+          <!-- R1 C1 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Null) <br>
+              <b>Text:</b> 💬 <i>"A chair with fire crackling ..."</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;"> </audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" poster="static/images/fire.png">
+              <div class="controls glass" style="text-align: left;"> Text-to-2D: </div> </model-viewer>  
+          </div>
+          <!-- R1 C2 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Null) <br>
+              <b>Text:</b> 💬 <i>"A chair with fire crackling ..."</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./audios/gen_audios/landscape/Squishing water 1.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="fir_chair_t23.glb">
+              <div class="controls glass" style="text-align: left;"> Text-to-3D: </div> <effect-composer>
+                  <bloom-effect threshold="0.48"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+          
+          <!-- R1 C3 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Fire Cracking) <br>
+              <b>Text:</b> 💬 <i>"A Chair"</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/fire_x1.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="fire_chair.glb">
+              <div class="controls glass" style="text-align: left;"> (pure) Audio-Driven Text-to-3D: </div> <effect-composer>
+                  <bloom-effect threshold="0.8"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div> 
+        <!-- R1 C4 -->
+          <div class="column is-one-forth">
+            <p style="text-align: left; margin-left: 0%;">
+              <b>Audio:</b> 🔊 (Fire Crackling) <br>
+              <b>Text:</b> 💬 <i>"A Chair"</i> </p>
+            <audio id="audioPlay" controls="" style="width: 100%;">
+              <source src="./static/audios/fire_x1.wav"></audio>
+            <model-viewer id="neutral-demo" camera-controls touch-action="pan-y" auto-rotate alt="A 3D model of a kitchen mixer" shadow-intensity="1.5" style="width: 100%;" src="fire_chair_sds_a_t_shape.glb">
+              <div class="controls glass" style="text-align: left;"> Ours: </div> <effect-composer>
+                  <bloom-effect threshold="0.48"></bloom-effect>
+                  <glitch-effect></glitch-effect>
+                  </effect-composer> </model-viewer>  
+          </div>
+        </div>
+        
+        <!-- Row 1 End-->
+        <h2 class="subtitle has-text-centered"> Our attribute-decoupled guidance produces more realistic 3D structures that align each property into textual prompt and audio inputs.</h2>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+  <div class="spacer"></div>
+</section>
+
+
+<!-- Prelminaries -->
+<!-- <section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <br>
+        <h2 class="title is-3">Prelminaries</h2>
+        <div class="column">
+          <img src="static/images/preliminaries.png"/>
+          <br><br>
+          <h2 class="subtitle has-text-centered">TBD</h2>
+        </div>
+        <br>
+        <div class="content has-text-justified">
+          Prelminaries of our method.
+        </div>
+        </div>
+    </div>
+    <div class="spacer"></div>
+  </div>
+</section> -->
+
+<!-- Q&A -->
+<section class="hero is-black">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <br>
+        <h2 class="title is-3">Q&A</h2>
+        <br>
+        <div class="content has-text-justified">
+          <ol>
+            <li>
+              <p class="faq-question">Why Gaussian Splatting instead of NeRFs?</p>
+              <p class="faq-answer">Gaussian Splatting offers balanced performance and efficiency on training time, intuition and computing resource. No one want to wait 5+ hours to create simple 3D object indeed. Taking GS as 3D representation allows for fast optimization and easier manipulation of 3D objects within 2 minutes and 12GB VRAM occupancy.</p><br>
+            </li>
+            <li>
+              <p class="faq-question">Why SDS?</p>
+              <p class="faq-answer">At the time of this research, SDS-based 3D generation method (e.g., DreamFusion, DreamGaussian) provides substantial flexibility which enables 3D content creation from single condition upon pretrained diffusion models without 3D awareness or cross-modal data requirements. Thanks to this capability, we can realize audio-to-3D system upon pretrained audio-to-image diffusion models for 3D mesh.</p>
+            </li>
+          </ol>
+        </div>
+        </div>
+    </div>
+    
+  </div>
+  <div class="spacer"></div>
+</section>
+
+<footer class="footer is-black">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p class="has-text-centered">
+            <a href='https://mapmyvisitors.com/web/1c1wm'  title='Visit tracker'><img src='https://mapmyvisitors.com/map.png?cl=080808&w=300&t=tt&d=Gaj203IT55ln27GneX7Iffztgy30bmBDa8tEqluiqVs&co=ffffff&ct=808080'/></a> 
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+
+
+</body>
+</html>
